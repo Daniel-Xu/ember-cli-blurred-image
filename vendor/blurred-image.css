@@ -8,19 +8,16 @@
   padding-top: 75%;
 }
 
-#emberCliBlurredImage-smallImage {
-  opacity: 1;
-}
-
-.emberCliBlurredImage-wrapper img {
+.emberCliBlurredImage-wrapper img,
+.emberCliBlurredImage-wrapper canvas {
   position: absolute;
-  opacity: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
-.emberCliBlurredImage-wrapper.is-loaded .emberCliBlurredImage-smallImage {
+.emberCliBlurredImage-wrapper img {
   opacity: 0;
 }
+
