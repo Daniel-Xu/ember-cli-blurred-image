@@ -121,9 +121,9 @@ function stackBlurImageWithRect( imageID, canvasID, width, height, radius, blurA
 	if ( isNaN(radius) || radius < 1 ) return;
 
 	if ( blurAlphaChannel )
-		stackBlurCanvasRGBA(canvasID, 0, 0, width, width, radius);
+		stackBlurCanvasRGBA(canvasID, 0, 0, width, height, radius);
 	else
-		stackBlurCanvasRGB(canvasID, 0, 0, width, width, radius);
+		stackBlurCanvasRGB(canvasID, 0, 0, width, height, radius);
 }
 
 
