@@ -29,9 +29,6 @@ export default Ember.Component.extend({
   radius: 90,
 
   _handleImagesLoading: on('didRender', function() {
-    let normalImage = $('<img>', {
-      src: get(this, 'normalImageUrl')
-    });
     let blurredImage = this.$('#emberCliBlurredImage-smallImage');
 
     blurredImage.one('load', () => {
@@ -44,6 +41,10 @@ export default Ember.Component.extend({
         stackBlurImageWithRect('emberCliBlurredImage-smallImage',
                                'emberCliBlurredImage-canvas', width, height, radius);
       });
+    });
+
+    let normalImage = $('<img>', {
+      src: get(this, 'normalImageUrl')
     });
 
     normalImage.one('load', () => {
