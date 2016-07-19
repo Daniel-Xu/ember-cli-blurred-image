@@ -19,6 +19,7 @@ export default Ember.Component.extend({
   classNameBindings: ['isLoaded'],
   attributeBindings: ['style'],
   classNames: ['emberCliBlurredImage-wrapper'],
+  concatenatedProperties: ['class'],
 
   normalImageUrl: null,
   blurredImageUrl: null,
