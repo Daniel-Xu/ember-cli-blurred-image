@@ -10,5 +10,6 @@ module.exports = {
     });
 
     app.import('/vendor/blurred-image.css');
+    app.import('vendor/stack-blur.js');
 	}
 };
