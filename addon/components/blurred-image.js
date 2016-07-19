@@ -58,10 +58,18 @@ export default Ember.Component.extend({
 
   style: computed('width', 'height', {
     get() {
+
       let cssAttrs = [];
-      cssAttrs.push(['width', `${get(this, 'width')}px`]);
-      cssAttrs.push(['height', `${get(this, 'height')}px`]);
-      cssAttrs.push(['padding', '0px']);
+      let width = get(this, 'width');
+      let height = get(this, 'height');
+      if (width) {
+        cssAttrs.push(['width', `${width}px`]);
+      }
+
+      if (height) {
+        cssAttrs.push(['height', `${height}px`]);
+        cssAttrs.push(['padding', '0px']);
+      }
 
       return htmlSafe(cssAttrs.map((attr) => {
         return `${attr[0]}: ${attr[1]}`;
