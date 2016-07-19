@@ -37,7 +37,7 @@ export default Ember.Component.extend({
         let height = get(this, 'height') || this.$().outerHeight();
         let radius = get(this, 'radius');
 
-        this.$().append($('<canvas id="emberCliBlurredImage-canvas"></canvas>'));
+        $('<canvas id="emberCliBlurredImage-canvas"></canvas>').prependTo(this.$());
         stackBlurImageWithRect('emberCliBlurredImage-smallImage',
                                'emberCliBlurredImage-canvas', width, height, radius);
       });
@@ -49,6 +49,7 @@ export default Ember.Component.extend({
 
     normalImage.one('load', () => {
       run.scheduleOnce('afterRender', this, () => {
+        blurredImage.off('load');
         set(this, 'isLoaded', true);
         this.$().append(normalImage);
         normalImage.animate({

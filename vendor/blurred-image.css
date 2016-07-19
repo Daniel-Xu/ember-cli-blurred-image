@@ -20,7 +20,3 @@
 .emberCliBlurredImage-wrapper img {
   opacity: 0;
 }
-
-.emberCliBlurredImage-wrapper.is-loaded canvas {
-  opacity: 0;
-}
