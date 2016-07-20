@@ -5,7 +5,6 @@ import Ember from 'ember';
 import layout from '../templates/components/blurred-image';
 
 const {
-  on,
   set,
   get,
   run,
@@ -28,7 +27,9 @@ export default Ember.Component.extend({
   // From 0-180
   radius: 90,
 
-  _handleImagesLoading: on('didRender', function() {
+  didRender: function() {
+    this._super(...arguments);
+
     let blurredImage = this.$('#emberCliBlurredImage-smallImage');
 
     blurredImage.one('load', () => {
@@ -57,7 +58,7 @@ export default Ember.Component.extend({
         }, 1000);
       });
     });
-  }),
+  },
 
   style: computed('width', 'height', {
     get() {
